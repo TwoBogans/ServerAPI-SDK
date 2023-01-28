@@ -7,9 +7,11 @@ import au.twobbeetwotee.api.responses.discord.MinecraftGetIDResponse;
 import au.twobbeetwotee.api.responses.discord.MinecraftRegisteredResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class API {
@@ -23,6 +25,10 @@ public class API {
 
     public BalanceResponse getBalance() throws IOException {
         return gson.fromJson(Http.GET(String.format(Endpoints.BALANCE)), BalanceResponse.class);
+    }
+
+    public HashMap<Integer, ChatMessage> getChat() throws IOException {
+        return gson.fromJson(Http.GET(String.format(Endpoints.CHAT)), new TypeToken<HashMap<Integer, ChatMessage>>(){}.getType());
     }
 
     public PlayerUUIDResponse getPlayerUUID(UUID uuid) throws IOException {

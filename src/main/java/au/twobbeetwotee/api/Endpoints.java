@@ -5,6 +5,7 @@ public class Endpoints {
     // Regular 2b2t Australia API
     private static final String API_URL = "https://api.2b2t.au/v1";
     public static final String BALANCE = API_URL.concat("/balance");
+    public static final String CHAT = API_URL.concat("/chat");
     public static final String SERVER = API_URL.concat("/server");
     public static final String STATS = API_URL.concat("/stats");
     public static final String QUEUE = API_URL.concat("/queue");
