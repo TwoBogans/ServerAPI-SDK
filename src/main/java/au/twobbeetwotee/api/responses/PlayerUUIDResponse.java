@@ -4,9 +4,11 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class PlayerUUIDResponse {
     @Expose private String uuid;
     @Expose private String displayName;
@@ -15,11 +17,12 @@ public class PlayerUUIDResponse {
     @Expose private String joinDate;
     @Expose private String playTime;
     @Expose private String lastDeath;
-    @Expose private PlayerStatistics statistics;
+    @Expose private Statistics statistics;
 
     @Getter
     @Setter
-    public static class PlayerStatistics {
+    @ToString
+    public static class Statistics {
         @Expose private int playerKills;
         @Expose private int mobKills;
         @Expose private int deaths;
@@ -28,6 +31,7 @@ public class PlayerUUIDResponse {
 
         @Getter
         @Setter
+        @ToString
         public static class Mined {
             @Expose private int obsidian;
             @Expose private int enderChest;
@@ -35,6 +39,7 @@ public class PlayerUUIDResponse {
 
         @Getter
         @Setter
+        @ToString
         public static class Placed {
             @Expose private int obsidian;
             @Expose private int enderChest;
