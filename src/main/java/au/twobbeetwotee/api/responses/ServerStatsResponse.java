@@ -17,7 +17,7 @@ public class ServerStatsResponse {
     @Getter
     @Setter
     public static class ServerPerformance {
-        @Expose private int tps;
+        @Expose private double tps;
         @Expose private long uptimeLong;
         @Expose private long totalMemory;
         @Expose private long maxMemory;

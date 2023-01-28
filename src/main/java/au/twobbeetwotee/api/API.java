@@ -11,10 +11,10 @@ import java.util.UUID;
 public class API {
 
     @Getter
-    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson gson;
 
     public API() {
-
+        gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
     public BalanceResponse getBalance() throws IOException {
