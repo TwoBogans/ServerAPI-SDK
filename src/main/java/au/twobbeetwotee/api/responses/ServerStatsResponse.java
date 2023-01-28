@@ -5,53 +5,23 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class ServerStatsResponse {
-    @Getter
-    @Setter
-    @Expose
-    private String name;
-    @Getter
-    @Setter
-    @Expose
-    private String version;
-    @Getter
-    @Setter
-    @Expose
-    private String uptime;
-    @Getter
-    @Setter
-    @Expose
-    private int online;
-    @Getter
-    @Setter
-    @Expose
-    @SerializedName("performance")
-    private ServerPerformance serverPerformance;
+    @Expose private String name;
+    @Expose private String version;
+    @Expose private String uptime;
+    @Expose private int online;
+    @Expose private ServerPerformance performance;
 
-    private static class ServerPerformance {
-        @Getter
-        @Setter
-        @Expose
-        private int tps;
-        @Getter
-        @Setter
-        @Expose
-        private long uptimeLong;
-        @Getter
-        @Setter
-        @Expose
-        private long totalMemory;
-        @Getter
-        @Setter
-        @Expose
-        private long maxMemory;
-        @Getter
-        @Setter
-        @Expose
-        private long freeMemory;
-        @Getter
-        @Setter
-        @Expose
-        private int cpus;
+    @Getter
+    @Setter
+    public static class ServerPerformance {
+        @Expose private int tps;
+        @Expose private long uptimeLong;
+        @Expose private long totalMemory;
+        @Expose private long maxMemory;
+        @Expose private long freeMemory;
+        @Expose private int cpus;
     }
 }

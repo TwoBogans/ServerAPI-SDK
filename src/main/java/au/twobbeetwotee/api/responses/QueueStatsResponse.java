@@ -4,17 +4,10 @@ import com.google.gson.annotations.Expose;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class QueueStatsResponse {
-    @Getter
-    @Setter
-    @Expose
-    private int regular;
-    @Getter
-    @Setter
-    @Expose
-    private int priority;
-    @Getter
-    @Setter
-    @Expose
-    private int veteran;
+    @Expose private int regular;
+    @Expose private int priority;
+    @Expose private int veteran;
 }

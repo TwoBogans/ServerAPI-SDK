@@ -5,83 +5,39 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class PlayerUUIDResponse {
-    @Getter
-    @Setter
-    @Expose
-    private String uuid;
-    @Getter
-    @Setter
-    @Expose
-    private String displayName;
-    @Getter
-    @Setter
-    @Expose
-    private int ticksAlive;
-    @Getter
-    @Setter
-    @Expose
-    private long joinDateMillis;
-    @Getter
-    @Setter
-    @Expose
-    private String joinDate;
-    @Getter
-    @Setter
-    @Expose
-    private String playTime;
-    @Getter
-    @Setter
-    @Expose
-    private String lastDeath;
-    @Getter
-    @Setter
-    @Expose
-    @SerializedName("statistics")
-    private PlayerStatistics playerStatistics;
+    @Expose private String uuid;
+    @Expose private String displayName;
+    @Expose private int ticksAlive;
+    @Expose private long joinDateMillis;
+    @Expose private String joinDate;
+    @Expose private String playTime;
+    @Expose private String lastDeath;
+    @Expose private PlayerStatistics statistics;
 
-    private static class PlayerStatistics {
-        @Getter
-        @Setter
-        @Expose
-        private int playerKills;
-        @Getter
-        @Setter
-        @Expose
-        private int mobKills;
-        @Getter
-        @Setter
-        @Expose
-        private int deaths;
-        @Getter
-        @Setter
-        @Expose
-        private Mined mined;
-        @Getter
-        @Setter
-        @Expose
-        private Placed placed;
+    @Getter
+    @Setter
+    public static class PlayerStatistics {
+        @Expose private int playerKills;
+        @Expose private int mobKills;
+        @Expose private int deaths;
+        @Expose private Mined mined;
+        @Expose private Placed placed;
 
-        private static class Mined {
-            @Getter
-            @Setter
-            @Expose
-            private int obsidian;
-            @Getter
-            @Setter
-            @Expose
-            private int enderChest;
+        @Getter
+        @Setter
+        public static class Mined {
+            @Expose private int obsidian;
+            @Expose private int enderChest;
         }
 
-        private static class Placed {
-            @Getter
-            @Setter
-            @Expose
-            private int obsidian;
-            @Getter
-            @Setter
-            @Expose
-            private int enderChest;
+        @Getter
+        @Setter
+        public static class Placed {
+            @Expose private int obsidian;
+            @Expose private int enderChest;
         }
     }
 }

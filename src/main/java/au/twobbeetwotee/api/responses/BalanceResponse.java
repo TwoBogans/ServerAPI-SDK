@@ -4,21 +4,11 @@ import com.google.gson.annotations.Expose;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class BalanceResponse {
-    @Getter
-    @Setter
-    @Expose
-    private int wallet;
-    @Getter
-    @Setter
-    @Expose
-    private int costs;
-    @Getter
-    @Setter
-    @Expose
-    private String currency;
-    @Getter
-    @Setter
-    @Expose
-    private String month;
+    @Expose private int wallet;
+    @Expose private int costs;
+    @Expose private String currency;
+    @Expose private String month;
 }
