@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.HashMap;
+
 @Getter
 @Setter
 @ToString
@@ -17,32 +19,5 @@ public class PlayerUUIDResponse {
     @Expose private String joinDate;
     @Expose private String playTime;
     @Expose private String lastDeath;
-    @Expose private Statistics statistics;
-
-    @Getter
-    @Setter
-    @ToString
-    public static class Statistics {
-        @Expose private int playerKills;
-        @Expose private int mobKills;
-        @Expose private int deaths;
-        @Expose private Mined mined;
-        @Expose private Placed placed;
-
-        @Getter
-        @Setter
-        @ToString
-        public static class Mined {
-            @Expose private int obsidian;
-            @Expose private int enderChest;
-        }
-
-        @Getter
-        @Setter
-        @ToString
-        public static class Placed {
-            @Expose private int obsidian;
-            @Expose private int enderChest;
-        }
-    }
+    @Expose private HashMap<String, Integer> statistics;
 }

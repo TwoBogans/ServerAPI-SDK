@@ -9,7 +9,9 @@ public class Endpoints {
     public static final String SERVER = API_URL.concat("/server");
     public static final String STATS = API_URL.concat("/stats");
     public static final String QUEUE = API_URL.concat("/queue");
+    public static final String PLAYERS = API_URL.concat("/players");
     public static final String PLAYER_UUID = API_URL.concat("/player/%s");
+    public static final String SEEN_UUID = API_URL.concat("/seen/%s");
 
     // Discord <-> Minecraft Verification API
     // TODO Nicer Endpoints?

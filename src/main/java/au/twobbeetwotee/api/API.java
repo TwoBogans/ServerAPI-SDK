@@ -12,6 +12,7 @@ import lombok.Getter;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class API {
@@ -31,12 +32,24 @@ public class API {
         return gson.fromJson(Http.GET(String.format(Endpoints.CHAT)), new TypeToken<HashMap<Integer, ChatMessage>>(){}.getType());
     }
 
-    public PlayerUUIDResponse getPlayerUUID(UUID uuid) throws IOException {
-        return getPlayerUUID(uuid.toString());
+    public List<PlayerUUIDResponse> getOnlinePlayers() throws IOException {
+        return gson.fromJson(Http.GET(String.format(Endpoints.PLAYERS)), new TypeToken<List<PlayerUUIDResponse>>(){}.getType());
     }
 
-    public PlayerUUIDResponse getPlayerUUID(String uuid) throws IOException {
+    public PlayerUUIDResponse getOnlinePlayer(UUID uuid) throws IOException {
+        return getOnlinePlayer(uuid.toString());
+    }
+
+    public PlayerUUIDResponse getOnlinePlayer(String uuid) throws IOException {
         return gson.fromJson(Http.GET(String.format(Endpoints.PLAYER_UUID, uuid)), PlayerUUIDResponse.class);
+    }
+
+    public SeenUUIDResponse getOfflinePlayer(UUID uuid) throws IOException {
+        return getOfflinePlayer(uuid.toString());
+    }
+
+    public SeenUUIDResponse getOfflinePlayer(String uuid) throws IOException {
+        return gson.fromJson(Http.GET(String.format(Endpoints.SEEN_UUID, uuid)), SeenUUIDResponse.class);
     }
 
     public QueueStatsResponse getQueueStats() throws IOException {
